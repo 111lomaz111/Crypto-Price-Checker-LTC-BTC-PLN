@@ -44,7 +44,7 @@
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBox1.Size = new System.Drawing.Size(174, 70);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "RESPONE";
+            this.richTextBox1.Text = "WELCOME goto www.Lomaz.pl";
             // 
             // textBoxuserLTCAmount
             // 
@@ -52,7 +52,7 @@
             this.textBoxuserLTCAmount.Name = "textBoxuserLTCAmount";
             this.textBoxuserLTCAmount.Size = new System.Drawing.Size(60, 20);
             this.textBoxuserLTCAmount.TabIndex = 1;
-            this.textBoxuserLTCAmount.Text = "0,39015";
+            this.textBoxuserLTCAmount.Text = "0,5";
             // 
             // labelPutYourLTCAmount
             // 
@@ -78,7 +78,7 @@
             this.textBoxuserBTCAmount.Name = "textBoxuserBTCAmount";
             this.textBoxuserBTCAmount.Size = new System.Drawing.Size(60, 20);
             this.textBoxuserBTCAmount.TabIndex = 4;
-            this.textBoxuserBTCAmount.Text = "0,39015";
+            this.textBoxuserBTCAmount.Text = "0,5";
             // 
             // Form1
             // 
@@ -91,7 +91,7 @@
             this.Controls.Add(this.labelPutYourLTCAmount);
             this.Controls.Add(this.textBoxuserLTCAmount);
             this.Controls.Add(this.richTextBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
