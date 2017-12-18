@@ -99,7 +99,7 @@ namespace LTCPriceChecker
             }
         }
 
-        //recalculating user value from ltc value to value in pln
+        //recalculating user LTC and BTC from value in pln
         private void convertUserCryptoToPLN()
         {
             retakeValue = new Thread(
@@ -118,7 +118,7 @@ namespace LTCPriceChecker
                         }
                         catch (Exception exception)
                         {
-                            MessageBox.Show("Type your value in correct format: \"12,34\"");
+                           // MessageBox.Show("Type your value in correct format: \"12,34\"");
                         }
 
                         userLTCValuePLN = LTCValuePLN * userLTCAmount;
