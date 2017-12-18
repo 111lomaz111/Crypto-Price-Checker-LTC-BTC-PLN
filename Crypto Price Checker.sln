@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTCPriceChecker", "LTCPriceChecker\LTCPriceChecker.csproj", "{4DA951D3-6386-4DAB-9478-EEC692A68549}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoPriceChecker", "LTCPriceChecker\CryptoPriceChecker.csproj", "{4DA951D3-6386-4DAB-9478-EEC692A68549}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
