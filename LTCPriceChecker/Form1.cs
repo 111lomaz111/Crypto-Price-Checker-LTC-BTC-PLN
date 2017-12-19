@@ -103,14 +103,15 @@ namespace LTCPriceChecker
             retakeValue = new Thread(
                 new ThreadStart(() =>
                 {
+                    float oldBTCValue, oldLTCValue;
+
                     for (; ; )
                     {
-                        Thread.Sleep(1000); // taking thread to pause for 1 second
-
-                        float oldBTCValue, oldLTCValue;
 
                         oldBTCValue = BTCValuePLN;
                         oldLTCValue = LTCValuePLN;
+
+                        Thread.Sleep(1000 * 10); // taking thread to pause for 10 second
 
                         getValuesOfCrypto();                        
 
@@ -133,12 +134,14 @@ namespace LTCPriceChecker
                             //⮝
                             richTextBox1.Text = "LTC Price in PLN";
                             if (oldLTCValue > LTCValuePLN) richTextBox1.Text += " ⮟"; //showing user if the crypto cuorse goes up or down
-                            else richTextBox1.Text += " ⮝";
+                            else if (oldLTCValue < LTCValuePLN) richTextBox1.Text += " ⮝";
+                            else richTextBox1.Text += "";
                             richTextBox1.Text += " = " + LTCValuePLN;
 
                             richTextBox1.Text += "\nBTC Price in PLN";
                             if (oldBTCValue > BTCValuePLN) richTextBox1.Text += " ⮟";
-                            else richTextBox1.Text += " ⮝";
+                            else if (oldBTCValue < BTCValuePLN) richTextBox1.Text += " ⮝";
+                            else richTextBox1.Text += "";
                             richTextBox1.Text += " = " + BTCValuePLN;
 
                             richTextBox1.Text += "\nYour LTC value in PLN = " + userLTCValuePLN.ToString();
