@@ -33,6 +33,8 @@
             this.labelPutYourLTCAmount = new System.Windows.Forms.Label();
             this.labelPutYourBTCAmount = new System.Windows.Forms.Label();
             this.textBoxuserBTCAmount = new System.Windows.Forms.TextBox();
+            this.buttonChangeOptions = new System.Windows.Forms.Button();
+            this.checkBoxTest = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -80,12 +82,34 @@
             this.textBoxuserBTCAmount.TabIndex = 4;
             this.textBoxuserBTCAmount.Text = "0,5";
             // 
+            // buttonChangeOptions
+            // 
+            this.buttonChangeOptions.Location = new System.Drawing.Point(15, 140);
+            this.buttonChangeOptions.Name = "buttonChangeOptions";
+            this.buttonChangeOptions.Size = new System.Drawing.Size(169, 23);
+            this.buttonChangeOptions.TabIndex = 6;
+            this.buttonChangeOptions.Text = "buttonChangeOptions";
+            this.buttonChangeOptions.UseVisualStyleBackColor = true;
+            this.buttonChangeOptions.Click += new System.EventHandler(this.buttonChangeOptions_Click);
+            // 
+            // checkBoxTest
+            // 
+            this.checkBoxTest.AutoSize = true;
+            this.checkBoxTest.Location = new System.Drawing.Point(12, 68);
+            this.checkBoxTest.Name = "checkBoxTest";
+            this.checkBoxTest.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxTest.TabIndex = 7;
+            this.checkBoxTest.UseVisualStyleBackColor = true;
+            this.checkBoxTest.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(196, 150);
+            this.ClientSize = new System.Drawing.Size(196, 177);
+            this.Controls.Add(this.checkBoxTest);
+            this.Controls.Add(this.buttonChangeOptions);
             this.Controls.Add(this.textBoxuserBTCAmount);
             this.Controls.Add(this.labelPutYourBTCAmount);
             this.Controls.Add(this.labelPutYourLTCAmount);
@@ -110,6 +134,8 @@
         private System.Windows.Forms.Label labelPutYourLTCAmount;
         private System.Windows.Forms.Label labelPutYourBTCAmount;
         private System.Windows.Forms.TextBox textBoxuserBTCAmount;
+        private System.Windows.Forms.Button buttonChangeOptions;
+        private System.Windows.Forms.CheckBox checkBoxTest;
     }
 }
 

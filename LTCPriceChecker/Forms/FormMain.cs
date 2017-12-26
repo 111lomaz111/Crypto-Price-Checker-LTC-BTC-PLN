@@ -11,6 +11,8 @@ using System.Threading;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using CryptoPriceChecker.GUI_Description;
+using CryptoPriceChecker;
 
 namespace LTCPriceChecker
 {
@@ -19,15 +21,20 @@ namespace LTCPriceChecker
 
         private String ltcWEB, btcWEB;
         private float LTCValuePLN, userLTCAmount, userLTCValuePLN, BTCValuePLN, userBTCAmount, userBTCValuePLN;
+        private bool allwaysOnTopState;
         private WebClient LTCwebClient, BTCwebClient;
+
         private Thread retakeValue;
 
         public Form1()
         {
             InitializeComponent();
 
-            labelPutYourLTCAmount.Text = "Put your LTC amount:";
-            labelPutYourBTCAmount.Text = "Put your BTC amount:";
+            labelPutYourLTCAmount.Text = GuiDesc.labelPutYourLTCAmountText;
+            labelPutYourBTCAmount.Text = GuiDesc.labelPutYourBTCAmountText;
+            buttonChangeOptions.Text = GuiDesc.changeOptionsText;
+
+            allwaysOnTopState = true;
 
             userLTCAmount = 0;
             LTCValuePLN = 0;
@@ -36,18 +43,17 @@ namespace LTCPriceChecker
             userBTCAmount = 0;
             BTCValuePLN = 0;
             userBTCValuePLN = 0;
-
-            TopMost = true; //allways on top of screen
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             getValuesOfCrypto();
             convertUserCryptoToPLN();
-            //something
+            changeTopMostState();
+            //todo by program
         }
 
-        //creating and connecting web client, then adding values 
+        //creating and connecting web client, then values from web
         private void getValuesOfCrypto()
         {
             LTCwebClient = new WebClient();
@@ -76,7 +82,7 @@ namespace LTCPriceChecker
                     MessageBox.Show(e.Message);
                 }
             }
-
+            //getting decimals from website
             MatchCollection ltc1 = Regex.Matches(ltcWEB, @"\d+((.|,)\d)+", RegexOptions.Singleline);
 
             int l = 0;
@@ -151,6 +157,44 @@ namespace LTCPriceChecker
                 }
                 ));
             retakeValue.Start();
+        }
+
+
+        private void changeTopMostState()
+        {
+            if (allwaysOnTopState == true)
+            {
+                TopMost = true;
+                checkBoxTest.Checked = true;
+            }
+            else
+            {
+                TopMost = false; //allways on top of screen if true
+                checkBoxTest.Checked = false;
+            }
+        }
+
+        private void buttonChangeOptions_Click(object sender, EventArgs e)
+        {
+            showFormOptions();
+        }
+
+        private void showFormOptions()
+        {
+            FormOptions formOptions = new FormOptions();
+
+            formOptions.SetallwaysOnTopState(allwaysOnTopState);
+
+            if (formOptions.ShowDialog(this) == DialogResult.OK)
+            {
+                this.allwaysOnTopState = formOptions.GetallwaysOnTopState;
+            }
+            else
+            {
+                return;
+            }
+            formOptions.Dispose();
+            changeTopMostState();
         }
     }
 }
