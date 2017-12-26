@@ -16,7 +16,7 @@
 x64/
 x86/
 bld/
-[Bb]in/
+[Bb]in/Debug
 [Oo]bj/
 [Ll]og/
 
