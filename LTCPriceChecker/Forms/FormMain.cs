@@ -111,7 +111,7 @@ namespace LTCPriceChecker
                 {
                     float oldBTCValue, oldLTCValue;
 
-                    for (; ; )
+                    for (; ;)
                     {
 
                         oldBTCValue = BTCValuePLN;
@@ -128,7 +128,9 @@ namespace LTCPriceChecker
                         }
                         catch (Exception exception)
                         {
-                           // MessageBox.Show("Type your value in correct format: \"12,34\"");
+
+                            MessageBox.Show("Type your value in correct format: \"12,34\"");
+
                         }
 
                         userLTCValuePLN = LTCValuePLN * userLTCAmount;
